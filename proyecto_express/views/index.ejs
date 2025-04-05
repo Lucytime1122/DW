@@ -1,0 +1,22 @@
+<%- include('layout') -%>
+
+    <section>
+        <h1>Mi sitio Web</h1>
+        <p>Bienvenidos al Himalaya</p>
+
+        <form action="/crear" method="POST">
+            <input type="text" name="texto" placeholder="Escribe una tarea" required>
+            <button type="submit">Agregar Tarea</button>
+        </form>
+
+        <h2>Tareas</h2>
+        <ul>
+            <% tareas.forEach(tarea=> { %>
+                <li>
+                    <%= tarea.texto %> - <small>
+                            <%= tarea.fecha %>
+                        </small>
+                </li>
+                <% }); %>
+        </ul>
+    </section>
